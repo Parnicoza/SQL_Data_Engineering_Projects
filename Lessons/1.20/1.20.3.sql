@@ -1,0 +1,10 @@
+SELECT
+     job_title_short,
+     AVG(jpf.salary_hour_avg)*40 *52 AS annualized_salary,
+     annualized_salary::DECIMAL(10,2) AS salary_hour_annual,
+     salary_hour_annual::int AS salary_hour_annual_zero_decimals,
+FROM job_postings_fact AS jpf
+WHERE
+     job_country ='United States' AND salary_hour_avg IS NOT NULL
+GROUP BY job_title_short
+ORDER BY salary_hour_annual DESC;
