@@ -7,4 +7,4 @@ SELECT
 FROM job_postings_fact
 WHERE  job_country = 'United States' AND job_title_short LIKE '%Data%'
 GROUP BY job_title_short, job_work_from_home
-ORDER BY job_title_short DESC, job_Work_from_home ASC;
+ORDER BY job_title_short DESC, job_Work_from_home ASC; 
